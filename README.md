@@ -22,7 +22,7 @@ appendable to the universe will quickly become limited.
 ## Premise and Conclusion elements
 
 | Quantifier scope		| Symbol	| Connective for the statement | Conjunctive Connective	|
-| ----------------------|:---------:|-----------------------------:|------------------------
+| ----------------------|:---------:|:----------------------------:|:----------------------:|
 | Universal				|	(x)		|	**&sup;**				   |	**&sdot;**			|
 | Existential			|	(Ex)	|	**&sdot;**                 |	**&or;**			|
 
