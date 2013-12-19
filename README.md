@@ -1,5 +1,4 @@
 # Invalidity.py
-___
 
 This program tests for the invalidity of an argument using an algorithm centered around the [shortened truth table method](http://ocw.mit.edu/courses/linguistics-and-philosophy/24-241-logic-i-fall-2005/readings/chp08.pdf) in [predicate logic](http://en.wikipedia.org/wiki/Predicate_logic).
 
@@ -30,6 +29,5 @@ appendable to the universe will quickly become limited.
 
 ## Misc. Rules
 
-*Predicates are capital letters A-Z
-
-*Constants are small letters a-w
+* Predicates are capital letters A-Z
+* Constants are small letters a-w
