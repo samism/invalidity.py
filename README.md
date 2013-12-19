@@ -21,13 +21,17 @@ appendable to the universe will quickly become limited.
 
 ## Premise and Conclusion elements
 
-| Quantifier scope		| Symbol	| Connective for the statement |	
-| ----------------------|:---------:|-----------------------------:|
-| Universal				|	(x)		|	**&sup;**				   |
-| Existential			|	(Ex)	|	**&sdot;**                 |
+| Quantifier scope		| Symbol	| Connective for the statement | Conjunctive Connective	|
+| ----------------------|:---------:|-----------------------------:|------------------------
+| Universal				|	(x)		|	**&sup;**				   |	**&sdot;**			|
+| Existential			|	(Ex)	|	**&sdot;**                 |	**&or;**			|
 
 
 ## Misc. Rules
 
 * Predicates are capital letters A-Z
 * Constants are small letters a-w
+
+## Usage
+
+Usage: `python invalidity.py "[premise]" "[premise]" "[conclusion]"`
