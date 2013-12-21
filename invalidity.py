@@ -8,11 +8,9 @@ class Invalidity(object):
 	def instantiateStatement(self, statement, member):
 		i_statement = ''
 		pred = statement[statement.find(')') + 1:len(statement)].split('x') # list of predicates
-		pred = pred[:-1]
+		pred = pred[:-1] # don't need first arg (filename)
 		print 'Predicates from statement: ' + str(pred)
 
-		#find a way to shorten this later. 
-		#too much code just to choose '.' or 'v'
 		for i in pred:
 			i_statement = i_statement + i + member
 			if statement.startswith('(x)') and pred[0] == i:
@@ -23,17 +21,15 @@ class Invalidity(object):
 		return i_statement
 
 	def __init__(self, args):
-		args = args[1:] #get rid of 1st arg which is the script name
+		args = args[1:] # get rid of 1st arg which is the script name
 
-		self.members = ['a'] #universe begins with a single member - a
-		self.statements = list() #format for a valid premise/conclusion -> ((E)x)A-ZxA-Zx
+		self.members = ['a'] # universe begins with a single member - a
+		self.statements = list() # format for a valid premise/conclusion -> ((E)x)A-ZxA-Zx
 
 		if len(args) < 1 or len(args) > 3:
 			print 'Usage: python invalidity.py "[premise]" "[premise]" "[conclusion]"'
 			print 'where premise/conc formatted: ((E)x)A-ZxA-Zx'
 			exit(1)
-
-		#print 'Statements given: ' + str(args)
 
 		for i in args:
 			for j in self.members:
