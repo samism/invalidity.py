@@ -4,13 +4,18 @@ import os
 class Invalidity(object):
 	# computes which variables must be T or F to arrive at an invalid case (1 universe, first)
 	def invalidCase(self, statements):
-		return 'foo-bar'
+		pass
+
+	# parses out individual predicates
+	# transfer parsing stuff from instantiateStatement() to here and leave actual instantiation
+	def obtainVariables(self, args):
+		pass
 
 	# instantiates quantified statement for a given member of the universe
 	def instantiateStatement(self, statement, member):
 		i_statement = ''
 		pred = statement[statement.find(')') + 1:len(statement)].split('x') # list of predicates
-		pred = pred[:-1] # don't need first arg (filename)
+		pred = pred[:-1]
 		#print 'Predicates from statement: ' + str(pred)
 
 		for i in pred:
@@ -27,6 +32,7 @@ class Invalidity(object):
 
 		self.members = ['a'] # universe begins with a single member - a
 		self.statements = list() # format for a valid premise/conclusion -> ((E)x)A-ZxA-Zx
+		self.variables = list() # individual predicates
 
 		if len(args) < 1 or len(args) > 3:
 			print 'Usage: python invalidity.py "[premise]" "[premise]" "[conclusion]"'
@@ -38,7 +44,8 @@ class Invalidity(object):
 			for j in self.members:
 				self.statements.append(self.instantiateStatement(i, j))
 
-		#...
-		print self.invalidCase(self.statements)
+		print self.statements
+		
+
 
 Invalidity(sys.argv)
