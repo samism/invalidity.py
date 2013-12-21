@@ -6,22 +6,19 @@ class Invalidity(object):
 	# instantiates quantified statement for a given member of the universe
 
 	def instantiateStatement(self, statement, member):
-		i_statement = None
+		i_statement = ''
 		pred = statement[statement.find(')') + 1:len(statement)].split('x') # list of predicates
 		pred = pred[:-1]
-		print 'Predicates from statement: ' + str(pred) + ', length: ' + str(len(pred))
+		print 'Predicates from statement: ' + str(pred)
 
 		#find a way to shorten this later. 
 		#too much code just to choose '.' or 'v'
-		for i in range(len(pred)):
-			if statement.startswith('(x)'):
-				i_statement = pred[i] + member
-				if i == 0:
-					i_statement = i_statement + '.'
-			elif statement.startswith('(Ex)'):
-				i_statement = pred[i] + member
-				if i == 0:
-					i_statement = i_statement + 'v'
+		for i in pred:
+			i_statement = i_statement + i + member
+			if statement.startswith('(x)') and pred[0] == i:
+				i_statement = i_statement + '.'
+			elif statement.startswith('(Ex)') and pred[0] == i:
+				i_statement = i_statement + 'v'
 
 		return i_statement
 
